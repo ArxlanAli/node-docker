@@ -1,2 +1,9 @@
 #!/bin/bash
-sudo docker rmi $(sudo docker images | grep "none" | awk '{print $3}')
+
+if [ $(sudo docker images -f "dangling=true" -q) ]; then
+  echo "Found a Dangling images"
+   sudo docker rmi $(sudo docker images -f "dangling=true" -q)
+else
+  echo "not found any dangling image"
+fi
+
