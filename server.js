@@ -22,6 +22,6 @@ app.use((error,req,res,next) => {
     return res.status(status).send(error.message);
 })
 
-app.listen('3001',() => console.log('server is listening'));
+app.listen('3000',() => console.log('server is listening'));
 
 module.exports = app;
