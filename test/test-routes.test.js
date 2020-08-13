@@ -18,6 +18,11 @@ describe('Main App file routes tests',() => {
             done();
         })
     })
+    it('Have property a',(done) => {
+        let a = {a:1}
+        expect(a).to.have.property('a',1);
+        done();
+    })
     it("not Found",(done) => {
         request('http://localhost:3001/21wwgdsydfygd',(error,res,body) => {
             expect(res.statusCode).to.equal(404);
